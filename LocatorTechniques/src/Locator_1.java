@@ -19,17 +19,25 @@ public class Locator_1 {
 		
 		//identify the password input object using 'name' attribute and submit value as '12345' for testing
 		driver.findElement(By.name("pass")).sendKeys("12345");
-		
+				
 		//identify the loggin button using 'xpath' of the button object and click using the 'click()' method
 		driver.findElement(By.xpath(".//*[@id='u_0_x']")).click();
 
+		/*
+			//other Locator Techniques: 'linkText' and 'partialLinkText'
+			//identify link 'Forgot your password?' object using linktext technique and click on the link
+			//driver.findElement(By.linkText("Forgot your password?")).click();
+	
+			//identify link 'Forgot your' partially using partiallinktext technique and click on the link
+			//driver.findElement(By.partialLinkText("Forgot your")).click();
+		*/
 		
 		/*
-		//Locator Technique 1: using xpath
-		//driver.get("https://www.google.ca");//hit the URL in the browser
-
-		//find element in the page which is having this provided xpath (identifing an element using xpath)
-		driver.findElement(By.xpath(".//*[@id='hplogo']/a/img")).click();
+			//Locator Technique 1: using xpath
+			//driver.get("https://www.google.ca");//hit the URL in the browser
+	
+			//find element in the page which is having this provided xpath (identifing an element using xpath)
+			driver.findElement(By.xpath(".//*[@id='hplogo']/a/img")).click();
 		*/	
 	}
 }
