@@ -4,15 +4,32 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Locator_1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
 
-		WebDriver driver = new FirefoxDriver();//invoke the Firefox browser
-		driver.get("https://www.google.ca");//hit the URL in the browser
-
-		//find element in the page which is having this provided xpath
-		driver.findElement(By.xpath(".//*[@id='hplogo']/a/img")).click();
 		
-	}
+		WebDriver driver = new FirefoxDriver();//invoke the Firefox browser
+		
+		//Facebook Login Automation Test
+		driver.get("https://www.facebook.com");//hit the URL in the browser
 
+		//identify the email input object using 'id' attribute and submit value as 'academy' for testing
+		driver.findElement(By.id("email")).sendKeys("academy");
+		
+		//identify the password input object using 'name' attribute and submit value as '12345' for testing
+		driver.findElement(By.name("pass")).sendKeys("12345");
+		
+		//identify the loggin button using 'xpath' of the button object and click using the 'click()' method
+		driver.findElement(By.xpath(".//*[@id='u_0_x']")).click();
+
+		
+		/*
+		//Locator Technique 1: using xpath
+		//driver.get("https://www.google.ca");//hit the URL in the browser
+
+		//find element in the page which is having this provided xpath (identifing an element using xpath)
+		driver.findElement(By.xpath(".//*[@id='hplogo']/a/img")).click();
+		*/	
+	}
 }
