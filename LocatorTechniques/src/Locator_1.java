@@ -13,7 +13,7 @@ public class Locator_1 {
 		
 		//Facebook Login Automation Test
 		driver.get("https://www.facebook.com");//hit the URL in the browser
-
+		
 		//identify the email input object using 'id' attribute and submit value as 'academy' for testing
 		driver.findElement(By.id("email")).sendKeys("academy");
 		
@@ -22,7 +22,7 @@ public class Locator_1 {
 				
 		//identify the loggin button using 'xpath' of the button object and click using the 'click()' method
 		driver.findElement(By.xpath(".//*[@id='u_0_x']")).click();
-
+		
 		/*
 			//other Locator Techniques: 'linkText' and 'partialLinkText'
 			//identify link 'Forgot your password?' object using linktext technique and click on the link
@@ -30,6 +30,9 @@ public class Locator_1 {
 	
 			//identify link 'Forgot your' partially using partiallinktext technique and click on the link
 			//driver.findElement(By.partialLinkText("Forgot your")).click();
+			
+			//find how many 'anchor tag' elements are there in the page
+	 		//driver.findElement(By.tagName("a"));
 		*/
 		
 		/*
