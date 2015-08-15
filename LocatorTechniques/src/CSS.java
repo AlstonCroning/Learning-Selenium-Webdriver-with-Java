@@ -7,15 +7,17 @@ public class CSS {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		WebDriver driver = new FirefoxDriver();
-		driver.get("https://login.salesforce.com");
-		driver.findElement(By.cssSelector("[class='identity first']")).sendKeys("qweqweqe");
+		WebDriver driver = new FirefoxDriver();//invoking Firefox Browser
+		driver.get("https://login.salesforce.com");//Hit the URL
+
+		//enter the username
+		driver.findElement(By.cssSelector("input[id='username']")).sendKeys("qweqweqe");
+
+		//enter the password
 		driver.findElement(By.cssSelector("input[id='password']")).sendKeys("kjsdfsf");
+		
+		//click the login button
 		driver.findElement(By.xpath("//button[@id='Login']")).click();
-		
-		
-		
-		
 	}
 
 }
