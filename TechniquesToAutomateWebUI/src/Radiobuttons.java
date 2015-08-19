@@ -14,6 +14,15 @@ public class Radiobuttons {
 		//print in the console how many radio buttons are in the group1 radio buttons
 		System.out.println( driver.findElements(By.xpath("//input[@name='group1']")).size());
 
+		//store how many radio buttons are in the group1 radio buttons in the 'count' integer
+		int count = driver.findElements(By.xpath("//input[@name='group1']")).size();
+		
+		//click each radio button one at a time starting from 0
+		for(int i = 0; i < count; i++)
+		{
+			driver.findElements(By.xpath("//input[@name='group1']")).get(i).click();
+		}
+		 
 	}
 
 }
