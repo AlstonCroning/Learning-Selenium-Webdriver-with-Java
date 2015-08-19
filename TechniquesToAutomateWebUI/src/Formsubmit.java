@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Formsubmit {
 
@@ -13,14 +14,22 @@ public class Formsubmit {
 		WebDriver driver = new ChromeDriver();//invloke the Chrome Browser
 		driver.manage().window().maximize();//maximize the Chrome Browser Window
 		driver.get("http://www.spicejet.com/");//hit URL in browser
-
-		//click on the dynamic dropbox field
-		driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).click();
-
-		//click on the 'GOI' element inside the dynamic dropbox field
-		driver.findElement(By.xpath("//a[@value='GOI']")).click();
 		
+		//creating an object of 'Select' class provided by Selenium and using it for Static Dropdown
+		Select dropdown = new Select(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_Adult']")));
 
+		//using three different methods of select class to select any dropdown
+		dropdown.selectByIndex(4); //index value starts with '0'
+		dropdown.selectByVisibleText("9 Adults");
+		dropdown.selectByValue("8");
+		
+		/*Used for Dynamic Dropdown
+			//click on the dynamic dropbox field
+			//driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).click();
+	
+			//click on the 'GOI' element inside the dynamic dropbox field
+			//driver.findElement(By.xpath("//a[@value='GOI']")).click();
+		*/
 	}
 
 }
