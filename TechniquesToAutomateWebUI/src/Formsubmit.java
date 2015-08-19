@@ -15,13 +15,24 @@ public class Formsubmit {
 		driver.manage().window().maximize();//maximize the Chrome Browser Window
 		driver.get("http://www.spicejet.com/");//hit URL in browser
 		
-		//creating an object of 'Select' class provided by Selenium and using it for Static Dropdown
-		Select dropdown = new Select(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_Adult']")));
+		System.out.println(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_chk_StudentDiscount']")).isSelected());
+		
+		driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_chk_StudentDiscount']")).click();
+		System.out.println(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_chk_StudentDiscount']")).isSelected());
 
-		//using three different methods of select class to select any dropdown
-		dropdown.selectByIndex(4); //index value starts with '0'
-		dropdown.selectByVisibleText("9 Adults");
-		dropdown.selectByValue("8");
+		driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_chk_StudentDiscount']")).click();
+		System.out.println(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_chk_StudentDiscount']")).isSelected());
+
+		
+		/*For Automating Static Dropdown
+			//creating an object of 'Select' class provided by Selenium and using it for Static Dropdown
+			Select dropdown = new Select(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_Adult']")));
+	
+			//using three different methods of select class to select any dropdown
+			dropdown.selectByIndex(4); //index value starts with '0'
+			dropdown.selectByVisibleText("9 Adults");
+			dropdown.selectByValue("8");
+		 */
 		
 		/*Used for Dynamic Dropdown
 			//click on the dynamic dropbox field
