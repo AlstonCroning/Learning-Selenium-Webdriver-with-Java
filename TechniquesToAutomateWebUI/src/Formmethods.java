@@ -27,6 +27,12 @@ public class Formmethods {
 		//Return Date element
 		System.out.println( driver.findElement(By.xpath(".//*[@id='return_date_sec']")).isDisplayed() );//checks whether the element is visible or not (if visible it will returns true)
 
+		//verify whether an element present in the web page or not by using 'size()' method
+		int count = driver.findElements(By.xpath(".//*[@id='mui_city_button']/span")).size();
+		if(count == 0)
+		{
+			System.out.println("Verified");
+		}
 		
 		
 	}
