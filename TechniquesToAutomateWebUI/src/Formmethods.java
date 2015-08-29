@@ -13,6 +13,7 @@ public class Formmethods {
 		 * check whether webpage's UI control(ex: radio button, check boxes, etc..) is enabled or disabled
 		 * you want to know what textcase is present in the web page and if u want to validate it how would u do it
 		 * calender automation
+		 * increase the number of adults for the flight search in the page
 		*/
 
 		WebDriver driver = new FirefoxDriver();//invoke the Firefox Browser
@@ -48,11 +49,17 @@ public class Formmethods {
 		
 		//calender automation
 		driver.findElement(By.xpath(".//*[@id='start_date_sec']/span[3]")).click();	//click on the calender element in the home page
-		driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[5]/td[6]/a")).click();//click on the 28th in the calender
+		driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[6]/td[1]/a")).click();//click on the 30th in the calender
 
 
-		
-		
+		//Increasing Number of Adults using the UI's '+' increment sign
+		int i = 0;
+		while(i < 5)
+		{
+			//click on the increment '+' element on each time gets loops through
+			driver.findElement(By.xpath(".//*[@id='adult_count']/a[2]")).click();
+			i++;
+		}
 		
 		
 		
