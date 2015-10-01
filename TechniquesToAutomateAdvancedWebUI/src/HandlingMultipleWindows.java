@@ -30,6 +30,8 @@ public class HandlingMultipleWindows {
 		driver.switchTo().window(childid);//switch to child window using the child id
 		System.out.println( driver.getTitle() );//print the Title of the Child window
 		
+		driver.switchTo().window(parentid);//switch back to parent window using the parent id
+		System.out.println( driver.getTitle() );//print the Title of the parent window		
 	}
 
 }
