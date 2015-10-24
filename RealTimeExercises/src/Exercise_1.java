@@ -61,8 +61,9 @@ public class Exercise_1 {
 		-get all the links present in the 'site map' page
 		*/
 		
-		System.out.println("Before Clicking the 'Site map' link");
-		System.out.println(driver.getTitle());
+		
+		//before clicking the 'site map' link
+		String page1_title = driver.getTitle();
 		
 		for(int i = 0; i < footer_column_2.findElements(By.tagName("a")).size(); i++)
 		{
@@ -75,9 +76,23 @@ public class Exercise_1 {
 
 		}
 		
-		System.out.println("After Clicking the 'Site map' link");
-		System.out.println(driver.getTitle());
+		//After clicking the Site map' link
+		String page2_title = driver.getTitle();
+
+		WebElement Site_map_para =  driver.findElement(By.xpath("html/body/table/tbody/tr[2]/td/table[2]/tbody/tr[3]/td/table/tbody/tr/td[2]"));
 		
+		if( page1_title != page2_title )
+		{
+			if(	 Site_map_para.getText().contains("View our sitemap to help you find your way")  )
+			{
+				System.out.println("Passed");
+			}
+		}
+		else
+		{
+			System.out.println("Failed");
+		}
+	
 		
 	}
 
