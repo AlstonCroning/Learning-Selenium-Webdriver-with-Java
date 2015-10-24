@@ -33,6 +33,51 @@ public class Exercise_1 {
 		System.out.println("Links present in Footer Section of Ebay.com");
 		System.out.println( element.findElements(By.tagName("a")).size() );
 
+		/*
+		Test Case 3:
+		-Count of the 'links' present in the second column of the Footer Section of the page on ebay.com
+		*/		
+		WebElement footer_column_2 = driver.findElement(By.xpath(".//*[@id='gf-BIG']/table/tbody/tr/td[2]/ul"));
+		System.out.println("Links present in the second column of the Footer Section of Ebay.com");
+		System.out.println(footer_column_2.findElements(By.tagName("a")).size());
+	
+		/*
+		Test Case 4:
+		-get the text and print of all the 'links' present in the second column of the Footer Section of the page on ebay.com
+		and click on the link 'site map' in the same column
+		
+		for(int i = 0; i < footer_column_2.findElements(By.tagName("a")).size(); i++)
+		{
+			System.out.println(footer_column_2.findElements(By.tagName("a")).get(i).getText());
+		}
+		*/
+		
+		/*
+		Test Case 5:
+		-click on the link 'site map' in the same column
+		-get the Title of both pages (before navigating and after navigating)
+		-put a check point for both titles to make sure they aren't matching/pages have been changed or not
+		-verify "view our sitemap to help you find your way" text after navigating to 'site map' page
+		-get all the links present in the 'site map' page
+		*/
+		
+		System.out.println("Before Clicking the 'Site map' link");
+		System.out.println(driver.getTitle());
+		
+		for(int i = 0; i < footer_column_2.findElements(By.tagName("a")).size(); i++)
+		{
+
+			if( footer_column_2.findElements(By.tagName("a")).get(i).getText().contains("Site map") )
+			{
+				footer_column_2.findElements(By.tagName("a")).get(i).click();
+				break;
+			}
+
+		}
+		
+		System.out.println("After Clicking the 'Site map' link");
+		System.out.println(driver.getTitle());
+		
 		
 	}
 
