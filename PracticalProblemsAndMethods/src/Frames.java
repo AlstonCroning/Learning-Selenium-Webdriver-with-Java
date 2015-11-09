@@ -21,19 +21,19 @@ public class Frames {
 		
 		for(int i = 0; i < FramesCount; i++)
 		{
+			
 			driver.switchTo().frame(i);
 			count = driver.findElements(By.xpath(".//*[@id='recaptcha-anchor']/div[5]")).size();
 
 			if(count > 0)
 			{			
+				//1: click on the 'I'm not a Robot' element
 				driver.findElement(By.xpath(".//*[@id='recaptcha-anchor']/div[5]")).click();
 				break;
 			}
 			driver.switchTo().defaultContent();
 		}
 		driver.switchTo().defaultContent();
-		
-
 		
 	}
 
