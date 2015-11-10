@@ -7,7 +7,7 @@ public class Frames {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		/* Test Case: Handling Multiple Frames using Selenium
+		/* Test Case: Handling Multiple Frames using Selenium ( 'I'm not a robot' Feature has been taken off the site)
 		 * 1: click on the I'm not a Robot checkbox/element
 		 * 2: then click on the verify button
 		*/
@@ -22,7 +22,10 @@ public class Frames {
 		for(int i = 0; i < FramesCount; i++)
 		{
 			
+			//switch to each frame one at a time
 			driver.switchTo().frame(i);
+
+			//find the i'm not a robot element
 			count = driver.findElements(By.xpath(".//*[@id='recaptcha-anchor']/div[5]")).size();
 
 			if(count > 0)
@@ -31,11 +34,15 @@ public class Frames {
 				driver.findElement(By.xpath(".//*[@id='recaptcha-anchor']/div[5]")).click();
 				break;
 			}
+			
+			//switch back to default web content from the switched frame
 			driver.switchTo().defaultContent();
 		}
+		
+		//switch to default web content from the switched frame in case it didn't occur within the loop
 		driver.switchTo().defaultContent();
 		
-	}
+	}//end of main
 
-}
+}//end of Frames class
 
